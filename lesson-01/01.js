@@ -4,3 +4,10 @@
 // your code
 let sum = 0
 
+while (sum <= 20) {
+    if (sum === 20) {
+        break
+    }
+    sum = sum + 1
+}
+console.log(sum);
