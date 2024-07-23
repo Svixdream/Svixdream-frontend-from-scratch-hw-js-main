@@ -6,9 +6,12 @@
 */
 
 // your code
-let factorial = 1
+let factorial = 1; // Начинаем с 1
+let number = 10; // Число, для которого считаем факториал
 
-while (factorial <= 3628800) {
-
+while (number > 1) {
+  factorial = factorial * number; // Умножаем текущее значение факториала на текущее число
+  number--; // Уменьшаем число на 1
 }
-console.log(factorial);
+
+console.log(factorial); // Выводим результат
