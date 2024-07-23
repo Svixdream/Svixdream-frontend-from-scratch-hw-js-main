@@ -8,8 +8,7 @@
 // your code
 let factorial = 1
 
-while (factorial <= 10) {
-  factorial *= 10;
-  n -= 1;
+while (factorial <= 3628800) {
+
 }
 console.log(factorial);
