@@ -4,6 +4,36 @@
  * Результат сохраните в переменной grade.
  */
 
-const score = 70 // тестовое значение, можно изменять
-let grade
+const score = Math.floor(Math.random() * 100)  // тестовое значение, можно изменять
+let grade // Переменная для хранения соответствующей оценки
 // your code
+
+while (true) { // Это бесконечный цикл, который будет выполняться до тех пор, пока не не встретит break.
+    if (score >= 90) {
+        grade = 'A';
+        console.log('Количество баллов: ' + score);
+        break;
+    }
+    else if (score >= 80) {
+        grade = 'B';
+        console.log('Количество баллов: ' + score);
+        break;
+    }
+    else if (score >= 70) {
+        grade = 'C';
+        console.log('Количество баллов: ' + score);
+        break;
+    }
+    else if (score >= 60) {
+        grade = 'D';
+        console.log('Количество баллов: ' + score);
+        break;
+    }
+    else {
+        grade = 'F'
+        console.log('Количество баллов: ' + score);
+        break // В каждом случае, как только найдено подходящее условие, присваивается соответствующая оценка и цикл прерывается с помощью оператора break
+    }
+}
+
+console.log('Оценка студента: '+ grade);
