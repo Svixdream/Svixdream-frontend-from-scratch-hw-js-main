@@ -1,15 +1,17 @@
 // Разработайте функцию isEven, которая определяет, чётное ли число.
 // Функция должна возвращать true, если число чётное, и false — в противном случае
 
-function isEven() {
-    const num = Math.floor(Math.random() * 101);
+function isEven(num) {
 
     if (num % 2 === 0) {
         console.log(`${num}: is even!`);
+        return true
     } else {
         console.log(`${num}: is odd!`);
+        return false
     }
-    return num
+    
 }
 
-isEven()
+isEven(1)
+isEven(2)
