@@ -13,7 +13,7 @@
 includesElement([1, 2, 3], 2)  // должен вернуть `true`.
 */
 const result = [1, 2, 3]; // массив с элементами [1, 2, 3]
-const boolElement = [2]; // массив с элементами [2], который мы будем проверять, чтобы узнать, есть ли эти элементы в массиве result
+const boolElement = [4]; // массив с элементами [2], который мы будем проверять, чтобы узнать, есть ли эти элементы в массиве result
 
 function includesElement(array, element) { // array основной массив (в нашем случае это result, boolElement элементы которого мы проверяем в element 
     for (let i = 0; i < element.length; i++) {
