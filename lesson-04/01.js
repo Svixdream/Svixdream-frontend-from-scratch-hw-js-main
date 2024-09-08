@@ -12,8 +12,8 @@
 Пример использования:
 includesElement([1, 2, 3], 2)  // должен вернуть `true`.
 */
-const result = ["apple", "banana", "cherry", "date"];
-const element = ["banana", "fig", "apple"];
+const result = [1, 2, 3];
+const element = [2];
 
 function includesElement(array, element) {
     for (let i = 0; i < element.length; i++) {
