@@ -12,5 +12,16 @@
 Пример использования:
 includesElement([1, 2, 3], 2)  // должен вернуть `true`.
 */
+const result = ["apple", "banana", "cherry", "date"];
+const element = ["banana", "fig", "apple"];
 
-function includesElement() {}
+function includesElement(array, element) {
+    for (let i = 0; i < element.length; i++) {
+        if (array.includes(element[i])) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+console.log(includesElement(result, element));
