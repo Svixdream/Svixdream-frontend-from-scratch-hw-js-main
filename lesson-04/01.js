@@ -12,16 +12,21 @@
 Пример использования:
 includesElement([1, 2, 3], 2)  // должен вернуть `true`.
 */
-const result = [1, 2, 3];
-const element = [2];
+const result = [1, 2, 3]; // массив с элементами [1, 2, 3]
+const boolElement = [2]; // массив с элементами [2], который мы будем проверять, чтобы узнать, есть ли эти элементы в массиве result
 
-function includesElement(array, element) {
-    for (let i = 0; i < element.length; i++) {
-        if (array.includes(element[i])) {
-            return true;
-        } else {
+function includesElement(array, element) { // array основной массив (в нашем случае это result, boolElement элементы которого мы проверяем в element 
+    for (let i = 0; i < element.length; i++) { 
+        // 1. let i = 0; Здесь мы создаём переменную i и инициализируем её значением 0. Эта переменная будет использоваться как счётчик итераций цикла. i начинает с 0, что соответствует индексу первого элемента в массиве
+        // 2. i < element.length Это условие проверяет, продолжать ли выполнение цикла. element.length — это длина массива element. Если массив содержит 1 элемент, его длина будет 1. Цикл будет продолжаться, пока i меньше element.length. То есть, цикл выполнится столько раз, сколько элементов в массиве element
+        // 3. После выполнения блока кода внутри цикла значение переменной i увеличивается на 1. i++ — это сокращённая запись для i = i + 1
+
+        if (!array.includes(element[i])) { 
+        // array.includes(element[i]) проверяет, содержится ли элемент element[i] (то есть текущий элемент из массива element) в массиве array (то есть в основном массиве result а Оператор ! (логическое отрицание) перед array.includes означает "если элемент не содержится". Если элемент не найден, функция сразу же возвращает false и завершает свою работу 
             return false;
+        } else {
+            return true;
         }
     }
 }
-console.log(includesElement(result, element));
+console.log(includesElement(result, boolElement));
