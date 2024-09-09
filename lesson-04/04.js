@@ -12,4 +12,11 @@
 Пример работы функции: `doubleEachCharacter('hello')` вернёт `'hheelllloo'`
 */
 
-function doubleEachCharacter() {}
+function doubleEachCharacter(str) {
+    const result = [] // Мы используем массив для хранения удвоенных символов
+    for (let i = 0; i < str.length; i++) {
+        result.push(str[i].repeat(2)) // Для каждого символа str[i] вызывается метод repeat(2), который удваивает символ, и добавляет его в массив result
+    }
+    return result.join('') // Метод join('') объединяет все элементы массива в одну строку без разделителей
+}
+console.log(doubleEachCharacter("Hello, world!"));
