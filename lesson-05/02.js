@@ -35,4 +35,14 @@ const gallery = {
   'The Scream': 'Edvard Munch',
 }
 
-function updateGallery() {}
+function updateGallery(gallery, artworkName, newValue) {
+  for (const key in gallery) {
+    if (key === artworkName) {
+      gallery[key] = newValue;
+      break
+    } else {
+      console.log(`Artwork ${artworkName} not found in the gallery.`);
+      gallery[artworkName] = newValue
+    }
+  }
+}
