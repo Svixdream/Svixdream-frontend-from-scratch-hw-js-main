@@ -17,3 +17,31 @@ const WEB_TECH_IMAGES = [
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/c8a1f4a6-1337-4899-bdfd-a8c9c7bb806a_css-magic-logo.jpg',
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/784380b9-6937-42a6-bdfe-869835820234_html-magic-logo.jpg',
 ]
+
+let currentIndex = 0; // Объявление переменной для отслеживания текущего индекса изображения
+
+function switchImage() {
+  document.getElementById('web-tech-image').src = WEB_TECH_IMAGES [currentIndex]; // находим изображение на странице по его id, а .src... заменяет путь (ссылку) на текущее изображение с той ссылки, которая соответствует текущему индексу currentIndex
+}
+
+
+  document.getElementById('prev-button').addEventListener('click', function() { // Мы находим кнопку с id="prev-button" на странице и добавляем к ней обработчик событий addEventListener('click', ...)
+    if (currentIndex === 0) {  /* Когда пользователь нажимает на кнопку, выполняется следующая логика:
+      Если текущее изображение — первое (currentIndex === 0), мы возвращаемся на последнее изображение в массиве, присваивая currentIndex = WEB_TECH_IMAGES.length - 1;. */
+        
+      currentIndex = WEB_TECH_IMAGES.length - 1; /* Если текущее изображение не первое, мы уменьшаем индекс на 1, делая currentIndex -= 1;. */
+    } else {
+      currentIndex -= 1; // Иначе уменьшаем индекс на 1
+    }
+    switchImage(); // Обновляем изображение
+  });
+
+  document.getElementById('next-button').addEventListener('click', function() {
+    if (currentIndex === WEB_TECH_IMAGES.length - 1) {
+      currentIndex = 0; /* Если текущее изображение — последнее в списке (то есть индекс равен последнему элементу массива: WEB_TECH_IMAGES.length - 1), мы переключаемся на первое изображение, присваивая currentIndex = 0; */
+    } else {
+      currentIndex += 1; /* Если текущее изображение не последнее, мы увеличиваем индекс на 1, делая currentIndex += 1; */
+    }
+    switchImage(); 
+  });
+
