@@ -6,10 +6,10 @@
   Другой вариант - использовать метод split строк, и метод массива join.
 */
 function capitalizeWords(str) {
-  const words = str.split(" ")
+  const words = str.split(" ") // Мы используем метод .split(" ") для разделения строки str на массив слов. Разделителем является пробел (" "). Например, строка "hello world" будет преобразована в массив ["hello", "world"]
   for (let i = 0; i < words.length; i++) {
-    words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+    words[i] = words[i][0].toUpperCase() + words[i].slice(1); // Здесь мы берем первое слово из массива words по индексу i, это берет первую букву слова и преобразует её в верхний регистр, words[i].slice(1) — это берет оставшуюся часть слова, начиная со второго символа до конца, с помощью оператора + мы объединяем заглавную первую букву и оставшуюся часть слова, присваивая результат обратно в words[i]
   }
-  return words.join(" ")
+  return words.join(" ") // после завершения цикла мы используем метод .join(" ") для объединения массива words обратно в строку, разделяя слова пробелами. Результат возвращается из функции
 }
 console.log(capitalizeWords("hello world from javascript"));
