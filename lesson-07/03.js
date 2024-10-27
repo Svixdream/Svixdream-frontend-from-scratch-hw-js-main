@@ -12,7 +12,7 @@
 function truncate(str, maxLength) {
   // your code
   if (str.length > maxLength) {
-    return str.slice(0, maxLength) + '...';
+    return str.slice(0, maxLength) + '...'; // Если длина строки больше maxLength, вы используете метод .slice() для обрезки строки до maxLength, а затем добавляете многоточие (...) в конце
   }
   return str;
 }
