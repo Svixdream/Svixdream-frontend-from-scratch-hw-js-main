@@ -39,9 +39,9 @@ startButton.addEventListener('click', () => {
   isTimerStarted = true; // Устанавливаем флаг запуска таймера
   // your code
   timerId = setInterval(() => {
-    counter -= 1
     if (counter > 0) {
       countdownDisplay.textContent = counter;
+      counter -= 1
     } else {
       countdownDisplay.textContent = '🚀';
       clearInterval(timerId)
