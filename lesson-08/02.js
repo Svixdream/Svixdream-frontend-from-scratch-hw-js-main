@@ -33,15 +33,16 @@ let isTimerStarted = false
 let timerId
 
 startButton.addEventListener('click', () => {
-  let counter = 3
   if (isTimerStarted) return; // Проверяем, что таймер не запущен
+  isTimerStarted = true;
+  let counter = 3
 
-  isTimerStarted = true; // Устанавливаем флаг запуска таймера
+  countdownDisplay.textContent = counter; // Немедленно отображаем значение 3
   // your code
   timerId = setInterval(() => {
+    counter -= 1
     if (counter > 0) {
       countdownDisplay.textContent = counter;
-      counter -= 1
     } else {
       countdownDisplay.textContent = '🚀';
       clearInterval(timerId)
