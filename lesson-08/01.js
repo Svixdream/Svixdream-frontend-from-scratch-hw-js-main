@@ -68,3 +68,33 @@ clearCartButton.addEventListener('click', function () {
 })
 
 // Твой код:
+  petShop.addEventListener('click', (event) => {
+    const targetElement = event.target
+    // Проверка, что клик был по кнопке с питомцем
+    if (targetElement.classList.contains('pet')) {
+      const petId = targetElement.id;
+
+          // Проверка количества питомцев в корзине
+    if (cart.length < 3) {
+      cart.push(petId); // Добавляем питомца в корзину
+      updateCartDisplay(); // Обновляем отображение корзины
+      messageBox.textContent = ''; // Очищаем сообщение
+    } else {
+              // Показ сообщения, если в корзине уже 3 питомца
+      messageBox.textContent = 'Вы не можете добавить более 3 питомцев';
+    }
+    }
+  })
+clearCartButton.addEventListener('click', () => {
+  cart.length = 0; // Очищаем корзину
+  updateCartDisplay() // Обновляем отображение корзины
+})
+
+
+
+
+
+
+
+
+
