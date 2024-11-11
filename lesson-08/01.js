@@ -74,7 +74,7 @@ clearCartButton.addEventListener('click', function () {
     if (targetElement.classList.contains('pet')) {
       const petId = targetElement.id;
 
-          // Проверка количества питомцев в корзине
+          // Проверяем, что в корзине менее 3 питомцев
     if (cart.length < 3) {
       cart.push(petId); // Добавляем питомца в корзину
       updateCartDisplay(); // Обновляем отображение корзины
