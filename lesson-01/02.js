@@ -6,11 +6,11 @@
 */
 
 // your code
-let sum = 1
+let factorial = 1
 let i = 1
 while (i <= 10) {
-  sum = sum * i
+  factorial = factorial * i
   i++
 }
-console.log(sum);
+console.log(factorial);
 
