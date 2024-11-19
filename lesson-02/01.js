@@ -8,24 +8,16 @@
 */
 
 // тестовые данные (значения можно менять)
-const isAdmin = false // статус администратора
-const isVerifiedUser = true // подтверждённый юзер
-const hasSpecialPermission = true // спец. разрешение
-const hasTemporaryPass = false // временное разрешение
+let isAdmin = true
+let isVerifiedUser = true
 
-// Определяем, может ли пользователь получить доступ
-let isAccess = (isAdmin || isVerifiedUser) && (hasSpecialPermission || hasTemporaryPass)
-// Проверяет, является ли пользователь администратором (isAdmin) или подтверждённым пользователем (isVerifiedUser). Если хотя бы одно из этих условий истинно, то выражение (isAdmin || isVerifiedUser) будет истинным
+let hasSpecialPermission = true
+let hasTemporaryPass = true
 
-// Проверяет, имеет ли пользователь специальное разрешение (hasSpecialPermission) или временный пропуск (hasTemporaryPass). Если хотя бы одно из этих условий истинно, то выражение (hasSpecialPermission || hasTemporaryPass) будет истинным
+let isAccess = ((isAdmin || isVerifiedUser) && (hasSpecialPermission || hasTemporaryPass))
 
-// your code
-
-switch (isAccess) {
-    case true:
-        console.log("Пользователь вошел в систему."); // Если значение isAccess равно true, выполняется первый блок case true, который выводит "Пользователь вошел в систему."
-        break;
-    case false:
-        console.log("Пользователь не вошел в систему."); // Если значение isAccess равно false, выполняется второй блок case false, который выводит "Пользователь не вошел в систему."
-        
-}
+    if (isAccess) { // Если переменная isAccess истинна (то есть равна true), то выполните блок кода внутри if"
+        console.log('Доступ получен!');
+    } else {
+        console.log('Доступ закрыт!');
+    }
