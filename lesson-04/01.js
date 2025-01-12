@@ -12,21 +12,13 @@
 Пример использования:
 includesElement([1, 2, 3], 2)  // должен вернуть `true`.
 */
-const result = [1, 2, 3]; // массив с элементами [1, 2, 3]
-const boolElement = [2, 4]; // массив с элементами [2], который мы будем проверять, чтобы узнать, есть ли эти элементы в массиве result
-
-function includesElement(array, element) { // array основной массив (в нашем случае это result, boolElement элементы которого мы проверяем в element 
+function includesElement(array, element) {
     for (let i = 0; i < array.length; i++) {
-        // 1. let i = 0; Здесь мы создаём переменную i и инициализируем её значением 0. Эта переменная будет использоваться как счётчик итераций цикла. i начинает с 0, что соответствует индексу первого элемента в массиве
-        // 2. i < element.length Это условие проверяет, продолжать ли выполнение цикла. element.length — это длина массива element. Если массив содержит 1 элемент, его длина будет 1. Цикл будет продолжаться, пока i меньше element.length. То есть, цикл выполнится столько раз, сколько элементов в массиве element
-        // 3. После выполнения блока кода внутри цикла значение переменной i увеличивается на 1. i++ — это сокращённая запись для i = i + 1
-
         if (array[i] === element) {
-            // Проверяет, равен ли текущий элемент массива array элементу element
-            return true;
+            return true
         }
     }
-    return false;
+    return false
 }
-console.log(includesElement([1, 2, 3], 2));
-console.log(includesElement([1, 2, 3], 4));
+
+console.log(includesElement([1, 2, 3, 4, 5], 3));
