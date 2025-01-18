@@ -6,7 +6,7 @@
 - **`array`**: Массив, который может содержать повторяющиеся элементы.
 
 **Выходные данные:**
-
+у
 - Массив, содержащий только уникальные элементы из исходного массива.
 
 **Пример использования:**
@@ -15,14 +15,16 @@
 Подсказка: можно использовать функцию `includesElement`, которую мы написали ранее. Переписывать её не нужно, она доступна по всему проекту за счёт hoisting.
 */
 
-
 function findUniqueElements(array) {
-    const result = []; // Создаем пустой массив для хранения уникальных элементов
-    for (let i = 0; i < array.length; i++) {// Перебираем все элементы исходного массива
-        if (!includesElement(result, array[i])) { // Если текущий элемент не содержится в массиве уникальных элементов
-            result.push(array[i])
+    const newArr = []
+    for (let i = 0; i < array.length; i++) {
+        const isElementFound = includesElement(newArr, array[i])
+        if (!isElementFound) {
+            newArr.push(array[i])
         }
     }
-    return result
+    return newArr
 }
-console.log(findUniqueElements([1, 2, 3, 2, 1, 4]));
+
+console.log(findUniqueElements([1, 2, 3, 2, 1, 4, 5]));
+

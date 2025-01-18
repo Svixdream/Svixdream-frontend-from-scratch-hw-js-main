@@ -17,17 +17,26 @@ findCommonElements([1, 2, 3], [2, 3, 4]) // [2, 3]
 Подсказка: можно использовать функцию `includesElement`, которую мы написали ранее. Переписывать её не нужно, она доступна по всему проекту за счёт hoisting.
 */
 
-function findCommonElements(array1, array2) {
-    const result = []
-    for (let i = 0; i < array1.length; i++) {
-        if (array2.includes(array1[i]) && !result.includes(array1[i])) { 
-        // Проверяем, содержится ли текущий элемент array1[i] в массиве array2, 
-        // !result.includes(array1[i]): проверяет, содержится ли элемент array1[i] уже в массиве result, 
-        // Символ ! (логическое отрицание) перед этим выражением означает, что мы проверяем, чтобы элемент array1[i] не был уже добавлен в result
-            result.push(array1[i]) // Если оба условия выполнены, элемент добавляется в массив result
+function includesElement(array, element) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === element) {
+            return true
         }
     }
-    return result
+    return false
 }
-console.log(findCommonElements([1, 3, 5, 4, 34], [1, 4, 34, 9, 43, 56]));
+
+function findCommonElements(array1, array2) {
+    const newArr = []
+    for (let i = 0; i < array1.length; i++) {
+        const commonElements = includesElement(array2, array1[i])
+        if (commonElements) {
+            newArr.push(array1[i])
+        }
+    }
+    return newArr
+}
+
+console.log(findCommonElements([4, 1, 3, 8, 2], [3, 1, 4, 8, 0]));
+
 
